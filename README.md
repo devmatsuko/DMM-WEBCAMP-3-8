@@ -1,24 +1,10 @@
-# README
+# DMM WEBCAMP コンテンツ【アプリケーションを完成させよう】
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+DMM WEBCAMP の学習コンテンツ アプリケーションを完成させよう 8 章の研修課題です。
+【Bookers】という読んだ本の感想を投稿するサイトを、Ruby on Railsを用いて開発します。
 
-Things you may want to cover:
+## 演習開始日時
 
-* Ruby version
+2020/9/4 15:30
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 演習終了日時
