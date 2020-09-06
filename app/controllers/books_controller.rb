@@ -12,15 +12,27 @@ class BooksController < ApplicationController
     book = Book.new(book_params)
     # データをデータベースに保存するためのsaveメソッド実行
     book.save
-    # トップ画面へリダイレクト
+    # 詳細画面へリダイレクト
     redirect_to books_path(book.id)
   end
 
   def show
+    # 指定IDのレコードを取得する
     @book = Book.find(params[:id])
   end
 
   def edit
+    # 指定IDのレコードを取得する
+    @book = Book.find(params[:id])
+  end
+
+  def update
+    # 指定IDのレコードを取得する
+    book = Book.find(params[:id])
+    # ページより取得したパラメータを上書きする
+    book.update(book_params)
+    # 詳細画面へリダイレクト
+    redirect_to books_path(book.id)
   end
 
   private
