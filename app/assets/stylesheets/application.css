@@ -42,3 +42,25 @@ label {
 .input {
   margin-bottom: 10px;
 }
+
+.error-message {
+  width: 450px;
+  border: 2px solid red;
+  background-color: #f0f0f0;
+  margin-bottom: 20px;
+}
+
+.error-message h4 {
+  font-weight: bold;
+  color: white;
+  display: block;
+  background: red;
+  margin: 0px;
+  padding: 7px;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
