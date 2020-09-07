@@ -12,6 +12,8 @@ class BooksController < ApplicationController
     @book = Book.new(book_params)
     # データをデータベースに保存するためのsaveメソッド実行
     if @book.save #保存が成功した場合
+      # サクセスメッセージ
+      flash[:success] = "Book was successfully created."
       # 詳細画面へリダイレクト
       redirect_to book_path(@book.id)
     else # 保存が失敗した場合
@@ -35,8 +37,11 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
     # ページより取得したパラメータを上書きする
     if @book.update(book_params)
+      # サクセスメッセージ
+      flash[:success] = "Book was successfully updated."
+      # 詳細画面へリダイレクト
       redirect_to book_path(@book.id)
-    else
+    else # 保存が失敗した場合
       render action: :edit
     end
   end
@@ -44,10 +49,15 @@ class BooksController < ApplicationController
   def destroy
     # 指定IDのレコードを取得する
     @book = Book.find(params[:id])
-    # データ（レコード）を削除
-    @book.destroy
-    # 投稿一覧画面へリダイレクト
-    redirect_to books_path
+    if @book.destroy #削除が成功した場合
+      # サクセスメッセージ
+      flash[:success] = "Book was successfully destroyed."
+      # 投稿一覧画面へリダイレクト
+      redirect_to books_path
+    else # 保存が失敗した場合
+      @books = Book.all
+      render action: :index
+    end
   end
 
   private
