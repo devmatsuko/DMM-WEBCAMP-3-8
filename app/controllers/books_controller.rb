@@ -18,7 +18,8 @@ class BooksController < ApplicationController
       redirect_to book_path(@book.id)
     else # 保存が失敗した場合
       @books = Book.all
-      render action: :index
+      render "index"
+      # redirect_to books_path
     end
   end
 
@@ -42,7 +43,7 @@ class BooksController < ApplicationController
       # 詳細画面へリダイレクト
       redirect_to book_path(@book.id)
     else # 保存が失敗した場合
-      render action: :edit
+      render "edit"
     end
   end
 
@@ -56,7 +57,7 @@ class BooksController < ApplicationController
       redirect_to books_path
     else # 保存が失敗した場合
       @books = Book.all
-      render action: :index
+      render "index"
     end
   end
 
